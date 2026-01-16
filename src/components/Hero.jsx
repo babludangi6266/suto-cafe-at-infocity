@@ -5,9 +5,9 @@ const Hero = () => {
   const heroImages = [
     '../../public/assets/about/about.png',
     '../../public/assets/about/croissant.png',
-    '../../public/assets/about/matcha.jpg',
+    '../../public/assets/comedy/image.png',
     '../../public/assets/about/dessert.png',
-    '../../public/assets/about/hero1.jpeg',
+    '../../public/assets/about/hero2.jpeg',
     '../../public/assets/about/hero2.jpeg',
     // '/assets/hero/cafe-ambiance-1.jpg',
     // '/assets/hero/matcha-latte.jpg',
