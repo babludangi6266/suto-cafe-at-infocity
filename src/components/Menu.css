@@ -1,0 +1,169 @@
+.menu-section {
+  background-color: var(--white);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 50px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.category-tab {
+  padding: 12px 28px;
+  background-color: transparent;
+  border: 2px solid var(--sage-green-light);
+  color: var(--sage-green);
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-tab:hover {
+  background-color: rgba(138, 154, 91, 0.1);
+}
+
+.category-tab.active {
+  background-color: var(--sage-green);
+  color: white;
+  border-color: var(--sage-green);
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.menu-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.card-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 25px;
+  position: relative;
+  z-index: 2;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.item-name {
+  font-size: 1.4rem;
+  color: var(--dark-green);
+  margin-right: 15px;
+}
+
+.item-price {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--sage-green);
+  white-space: nowrap;
+}
+
+.item-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  flex-grow: 1;
+}
+
+.menu-cta {
+  text-align: center;
+  padding: 40px;
+  background-color: var(--cream);
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-text {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: var(--dark-green);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .category-tabs {
+    gap: 10px;
+  }
+  
+  .category-tab {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .menu-items {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .card-image {
+    height: 180px;
+  }
+}
