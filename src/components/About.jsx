@@ -2,10 +2,10 @@ import './About.css'
 
 const About = () => {
   const aboutImages = [
-    '/assets/about/transparent-coffee.png',
-    '/assets/about/transparent-croissant.png',
-    '/assets/about/transparent-matcha.png',
-    '/assets/about/transparent-dessert.png',
+    '../../public/assets/about/about.png',
+    '../../public/assets/about/croissant.png',
+    '../../public/assets/about/matcha.jpg',
+    '../../public/assets/about/dessert.png',
   ]
 
   return (

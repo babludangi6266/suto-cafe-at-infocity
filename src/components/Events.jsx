@@ -6,21 +6,21 @@ const Events = () => {
       title: 'Comedy Litmus Open Mic',
       date: 'Every Friday, 8 PM',
       description: 'An evening of laughter with budding comedians from Bhubaneswar. Sign up for a 5-min slot or just enjoy the show!',
-      image: '/assets/events/comedy-show.jpg',
+      image: '../../public/assets/comedy/image1.png',
       featured: true
     },
     {
       title: 'Sunday Standup Special',
       date: 'First Sunday of Every Month',
       description: 'Featuring established comedians from across India. An evening of premium comedy with food and drink specials.',
-      image: '/assets/hero/cafe-interior.jpg',
+      image: '../../public/assets/comedy/image2.png',
       featured: false
     },
     {
       title: 'Open Mic Night',
       date: 'Every Wednesday, 7 PM',
       description: 'Not just comedy! Music, poetry, and storytelling welcome. A platform for all kinds of performers.',
-      image: '/assets/hero/cafe-ambiance-2.jpg',
+      image: '../../public/assets/comedy/image.png',
       featured: false
     }
   ]

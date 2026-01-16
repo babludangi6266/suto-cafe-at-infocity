@@ -14,10 +14,10 @@ const Menu = () => {
 
   const menuItems = {
     beverages: [
-      { name: 'Matcha Latte', price: '₹220', image: '/assets/menu/matcha-latte.jpg', description: 'Traditional Japanese matcha with steamed milk' },
-      { name: 'Fruit Smoothie', price: '₹180', image: '/assets/hero/tea-set.jpg', description: 'Fresh seasonal fruits blended to perfection' },
-      { name: 'Iced Lemon Tea', price: '₹150', image: '/assets/hero/cafe-ambiance-1.jpg', description: 'Refreshing black tea with lemon and mint' },
-      { name: 'Chocolate Shake', price: '₹200', image: '/assets/menu/chocolate-pastry.jpg', description: 'Rich Belgian chocolate with vanilla ice cream' },
+      { name: 'Matcha Latte', price: '₹220', image: '../../public/assets/menu/MatchaLatte.jpg', description: 'Traditional Japanese matcha with steamed milk' },
+      { name: 'Fruit Smoothie', price: '₹180', image: '../../public/assets/menu/FruitSmoothie.jpg', description: 'Fresh seasonal fruits blended to perfection' },
+      { name: 'Iced Lemon Tea', price: '₹150', image: '../../public/assets/menu/IcedLemonTea.jpg', description: 'Refreshing black tea with lemon and mint' },
+      { name: 'Chocolate Shake', price: '₹200', image: '../../public/assets/menu/ChocolateShake.jpg', description: 'Rich Belgian chocolate with vanilla ice cream' },
     ],
     desserts: [
       { name: 'Matcha Cheesecake', price: '₹280', image: '/assets/menu/chocolate-pastry.jpg', description: 'Creamy cheesecake with matcha infusion' },

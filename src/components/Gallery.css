@@ -1,0 +1,668 @@
+/* src/components/Gallery.css */
+.gallery-section {
+  background-color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background-color: var(--sage-green-light);
+  opacity: 0.1;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.gallery-section::after {
+  content: '';
+  position: absolute;
+  bottom: 100px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background-color: var(--sage-green);
+  opacity: 0.1;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(20px) rotate(240deg);
+  }
+}
+
+.featured-gallery {
+  margin-bottom: 60px;
+}
+
+.featured-title {
+  font-size: 1.8rem;
+  color: var(--dark-green);
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.featured-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sage-green), transparent);
+}
+
+.featured-track {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding: 20px 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sage-green) var(--cream);
+  cursor: grab;
+  scroll-behavior: smooth;
+}
+
+.featured-track:active {
+  cursor: grabbing;
+}
+
+.featured-track::-webkit-scrollbar {
+  height: 8px;
+}
+
+.featured-track::-webkit-scrollbar-track {
+  background: var(--cream);
+  border-radius: 10px;
+}
+
+.featured-track::-webkit-scrollbar-thumb {
+  background: var(--sage-green);
+  border-radius: 10px;
+}
+
+.featured-item {
+  flex: 0 0 300px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.featured-item:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.featured-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.featured-item:hover .featured-image img {
+  transform: scale(1.1);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.featured-item:hover .video-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.play-button {
+  width: 60px;
+  height: 60px;
+  background: var(--sage-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.featured-item:hover .play-button {
+  transform: scale(1.1);
+  background: var(--sage-green-dark);
+}
+
+.play-button svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+}
+
+.featured-content {
+  padding: 20px;
+}
+
+.featured-content h4 {
+  font-size: 1.3rem;
+  color: var(--dark-green);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.featured-content p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.gallery-filter {
+  padding: 10px 24px;
+  background: white;
+  border: 2px solid var(--sage-green-light);
+  color: var(--sage-green);
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-filter:hover {
+  background: rgba(138, 154, 91, 0.1);
+  transform: translateY(-2px);
+}
+
+.gallery-filter.active {
+  background: var(--sage-green);
+  color: white;
+  border-color: var(--sage-green);
+  box-shadow: 0 6px 20px rgba(138, 154, 91, 0.3);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.gallery-item {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  aspect-ratio: 1;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.gallery-item.featured {
+  grid-column: span 1;
+}
+
+@media (min-width: 992px) {
+  .gallery-item.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+}
+
+.gallery-item-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.gallery-item:hover .gallery-media {
+  transform: scale(1.1);
+}
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 25px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  color: white;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.media-type {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.3s ease 0.1s;
+}
+
+.gallery-item:hover .media-type {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.gallery-item-title {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease 0.1s;
+}
+
+.gallery-item:hover .gallery-item-title {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.gallery-item-description {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.5;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease 0.2s;
+}
+
+.gallery-item:hover .gallery-item-description {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.instagram-cta {
+  background: linear-gradient(135deg, var(--sage-green) 0%, var(--sage-green-dark) 100%);
+  border-radius: 25px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(138, 154, 91, 0.3);
+}
+
+.instagram-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.3;
+  animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(30px, 30px);
+  }
+}
+
+.instagram-content {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.instagram-content h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.instagram-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+.instagram-btn {
+  background: white;
+  color: var(--sage-green);
+  font-weight: 600;
+  border: none;
+}
+
+.instagram-btn:hover {
+  background: var(--cream);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-icon {
+  position: relative;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  color: white;
+  opacity: 0.8;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.instagram-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  background: var(--cream);
+  border-radius: 20px;
+  overflow: hidden;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: var(--dark-green);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+  background: white;
+  transform: rotate(90deg);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  color: var(--dark-green);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.lightbox-nav:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-nav.prev {
+  left: 20px;
+}
+
+.lightbox-nav.next {
+  right: 20px;
+}
+
+.lightbox-media {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.lightbox-video {
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.lightbox-info {
+  padding: 25px;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lightbox-info h3 {
+  font-size: 1.8rem;
+  color: var(--dark-green);
+  margin-bottom: 10px;
+}
+
+.lightbox-info p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.lightbox-meta {
+  display: flex;
+  gap: 20px;
+}
+
+.media-category,
+.media-type {
+  padding: 6px 15px;
+  background: var(--cream);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sage-green);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .instagram-cta {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+  }
+  
+  .instagram-icon {
+    margin-top: 30px;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-item {
+    flex: 0 0 250px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .gallery-filters {
+    gap: 8px;
+  }
+  
+  .gallery-filter {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .lightbox-media {
+    height: 50vh;
+  }
+  
+  .lightbox-nav {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+  
+  .lightbox-close {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .instagram-content h3 {
+    font-size: 1.6rem;
+  }
+  
+  .featured-track {
+    gap: 15px;
+  }
+  
+  .featured-item {
+    flex: 0 0 200px;
+  }
+}
