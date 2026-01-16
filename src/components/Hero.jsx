@@ -3,12 +3,12 @@ import './Hero.css'
 const Hero = () => {
   // Image filenames from the public/assets/hero folder
   const heroImages = [
-    '../../public/assets/about/about.png',
-    '../../public/assets/about/croissant.png',
-    '../../public/assets/comedy/image.png',
-    '../../public/assets/about/dessert.png',
-    '../../public/assets/about/hero2.jpeg',
-    '../../public/assets/about/hero2.jpeg',
+    '/assests/about/about.png',
+    '/assests/about/croissant.png',
+    '/assests/comedy/image.png',
+    '/assests/about/dessert.png',
+    '/assests/about/hero2.jpeg',
+    '/assests/about/hero2.jpeg',
     // '/assets/hero/cafe-ambiance-1.jpg',
     // '/assets/hero/matcha-latte.jpg',
     // '/assets/hero/coffee-art.jpg',
