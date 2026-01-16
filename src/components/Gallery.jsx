@@ -12,7 +12,7 @@ const Gallery = () => {
       id: 1,
       type: 'image',
       category: 'ambiance',
-      src: '../../public/assets/comedy/image.png',
+      src: '/assets/comedy/image.png',
       title: 'Cozy Corner',
       description: 'Our favorite reading nook with natural lighting',
       featured: true
@@ -21,7 +21,7 @@ const Gallery = () => {
       id: 2,
       type: 'image',
       category: 'food',
-      src: '../../public/assets/comedy/image1.png',
+      src: '/assets/comedy/image1.png',
       title: 'Matcha Delight',
       description: 'Signature matcha dessert with seasonal fruits',
       featured: true
@@ -30,8 +30,8 @@ const Gallery = () => {
       id: 3,
       type: 'video',
       category: 'events',
-      thumbnail: '../../public/assets/comedy/image1.png',
-      videoUrl: '../../public/assets/video1.mp4',
+      thumbnail: '/assets/comedy/image1.png',
+      videoUrl: '/assets/video1.mp4',
       title: 'Comedy Night Highlights',
       description: 'Laughter and good times at our weekly comedy show'
     },
@@ -39,7 +39,7 @@ const Gallery = () => {
       id: 4,
       type: 'image',
       category: 'ambiance',
-      src: '../../public/assets/comedy/image.png',
+      src: '/assets/comedy/image.png',
       title: 'Modern Interior',
       description: 'Minimalist design with warm wooden accents'
     },
@@ -47,7 +47,7 @@ const Gallery = () => {
       id: 5,
       type: 'image',
       category: 'food',
-      src: '../../public/assets/comedy/image2.png',
+      src: '/assets/comedy/image2.png',
       title: 'Latte Art',
       description: 'Handcrafted coffee with beautiful art'
     },
@@ -55,8 +55,8 @@ const Gallery = () => {
       id: 6,
       type: 'video',
       category: 'events',
-      thumbnail: '../../public/assets/comedy/image.png',
-      videoUrl: '../../public/assets/video2.mp4',
+      thumbnail: '/assets/comedy/image.png',
+      videoUrl: '/assets/video2.mp4',
       title: 'Live Music Session',
       description: 'Acoustic nights at Suto Cafe'
     },
@@ -64,7 +64,7 @@ const Gallery = () => {
       id: 7,
       type: 'image',
       category: 'people',
-      src: '../../public/assets/comedy/image.png',
+      src: '/assets/comedy/image.png',
       title: 'Happy Moments',
       description: 'Our customers enjoying their time at Suto'
     },
@@ -72,7 +72,7 @@ const Gallery = () => {
       id: 8,
       type: 'image',
       category: 'food',
-      src: '../../public/assets/comedy/image1.png',
+      src: '/assets/comedy/image1.png',
       title: 'Artisanal Platter',
       description: 'Fresh, locally sourced ingredients'
     },
@@ -80,7 +80,7 @@ const Gallery = () => {
       id: 9,
       type: 'image',
       category: 'ambiance',
-      src: '../../public/assets/comedy/image2.png',
+      src: '/assets/comedy/image2.png',
       title: 'Evening Vibes',
       description: 'Golden hour at the cafe',
       featured: true
@@ -89,8 +89,8 @@ const Gallery = () => {
       id: 10,
       type: 'video',
       category: 'events',
-      thumbnail: '../../public/assets/comedy/image.png',
-      videoUrl: '../../public/assets/video2.mp4',
+      thumbnail: '/assets/comedy/image.png',
+      videoUrl: '/assets/video2.mp4',
       title: 'Barista Workshop',
       description: 'Learn the art of coffee making'
     },
@@ -98,7 +98,7 @@ const Gallery = () => {
       id: 11,
       type: 'image',
       category: 'people',
-      src: '../../public/assets/comedy/image.png',
+      src: '/assets/comedy/image.png',
       title: 'Our Team',
       description: 'The passionate people behind Suto Cafe'
     },
@@ -106,7 +106,7 @@ const Gallery = () => {
       id: 12,
       type: 'image',
       category: 'food',
-      src: '../../public/assets/menu/ChocolateShake.jpg',
+      src: '/assets/menu/ChocolateShake.jpg',
       title: 'Tea Ceremony',
       description: 'Traditional tea preparation with modern twist'
     }

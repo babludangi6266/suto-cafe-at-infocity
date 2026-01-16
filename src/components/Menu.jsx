@@ -14,10 +14,10 @@ const Menu = () => {
 
   const menuItems = {
     beverages: [
-      { name: 'Matcha Latte', price: '₹220', image: '../../public/assets/menu/MatchaLatte.jpg', description: 'Traditional Japanese matcha with steamed milk' },
-      { name: 'Fruit Smoothie', price: '₹180', image: '../../public/assets/menu/FruitSmoothie.jpg', description: 'Fresh seasonal fruits blended to perfection' },
-      { name: 'Iced Lemon Tea', price: '₹150', image: '../../public/assets/menu/IcedLemonTea.jpg', description: 'Refreshing black tea with lemon and mint' },
-      { name: 'Chocolate Shake', price: '₹200', image: '../../public/assets/menu/ChocolateShake.jpg', description: 'Rich Belgian chocolate with vanilla ice cream' },
+      { name: 'Matcha Latte', price: '₹220', image: '/assets/menu/MatchaLatte.jpg', description: 'Traditional Japanese matcha with steamed milk' },
+      { name: 'Fruit Smoothie', price: '₹180', image: '/assets/menu/FruitSmoothie.jpg', description: 'Fresh seasonal fruits blended to perfection' },
+      { name: 'Iced Lemon Tea', price: '₹150', image: '/assets/menu/IcedLemonTea.jpg', description: 'Refreshing black tea with lemon and mint' },
+      { name: 'Chocolate Shake', price: '₹200', image: '/assets/menu/ChocolateShake.jpg', description: 'Rich Belgian chocolate with vanilla ice cream' },
     ],
     desserts: [
       { name: 'Matcha Cheesecake', price: '₹280', image: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TWF0Y2hhJTIwTGF0dGV8ZW58MHx8MHx8fDA%3D', description: 'Creamy cheesecake with matcha infusion' },
