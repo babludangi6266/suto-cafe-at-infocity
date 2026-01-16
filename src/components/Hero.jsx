@@ -4,11 +4,11 @@ const Hero = () => {
   // Image filenames from the public/assets/hero folder
   const heroImages = [
     '/assests/about/about.png',
-    '/assests/about/croissant.png',
-    '/assests/comedy/image.png',
-    '/assests/about/dessert.png',
-    '/assests/about/hero2.jpeg',
-    '/assests/about/hero2.jpeg',
+    '/assets/about/croissant.png',
+    '/assets/comedy/image.png',
+    '/assets/about/dessert.png',
+    '/assets/about/hero2.jpeg',
+    '/assets/about/hero2.jpeg',
     // '/assets/hero/cafe-ambiance-1.jpg',
     // '/assets/hero/matcha-latte.jpg',
     // '/assets/hero/coffee-art.jpg',
