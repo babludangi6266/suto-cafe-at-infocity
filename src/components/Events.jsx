@@ -81,7 +81,7 @@ const Events = () => {
         <div className="events-info">
           <div className="info-box">
             <h4>Want to Perform?</h4>
-            <p>We're always looking for fresh talent! Email us at <strong>events@sutocafe.com</strong> with your details and we'll get back to you.</p>
+            <p>We're always looking for fresh talent! DM us at <strong>Instagram</strong> with your details and we'll get back to you.</p>
           </div>
           <div className="info-box">
             <h4>Entry & Reservations</h4>
