@@ -49,7 +49,7 @@
 }
 
 .menu-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgb(218, 209, 128);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -133,6 +133,8 @@
   flex-grow: 1;
 }
 
+/* --- CTA Section & Buttons --- */
+
 .menu-cta {
   text-align: center;
   padding: 40px;
@@ -144,9 +146,102 @@
 
 .cta-text {
   font-size: 1.2rem;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   color: var(--dark-green);
   font-weight: 500;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Wrapper to position the popup relative to the button */
+.btn-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* General Button Styles */
+.btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+/* Download Button Style */
+.btn-primary.btn-download {
+  background-color: var(--sage-green);
+  color: white;
+  box-shadow: 0 4px 15px rgba(138, 154, 91, 0.4);
+}
+
+.btn-primary.btn-download:hover {
+  background-color: var(--sage-green-dark);
+  transform: translateY(-2px);
+}
+
+/* Swiggy Button Style */
+.btn-swiggy {
+  background-color: #FC8019; /* Swiggy Orange */
+  color: white;
+  box-shadow: 0 4px 15px rgba(252, 128, 25, 0.4);
+}
+
+.btn-swiggy:hover {
+  background-color: #e57212;
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* --- Menu Preview Popup --- */
+.menu-preview-popup {
+  position: absolute;
+  bottom: 110%; /* Positions it right above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px; /* Adjust preview size */
+  background: white;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+  pointer-events: none; /* Allows click to pass through if needed, though mostly visual */
+}
+
+/* Little arrow pointing down */
+.menu-preview-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.menu-preview-popup img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 @media (max-width: 768px) {
@@ -165,5 +260,21 @@
   
   .card-image {
     height: 180px;
+  }
+  
+  /* On mobile, stack buttons */
+  .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hide hover preview on mobile to prevent layout issues */
+  .menu-preview-popup {
+    display: none;
   }
 }

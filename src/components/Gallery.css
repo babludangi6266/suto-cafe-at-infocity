@@ -344,31 +344,6 @@
   opacity: 1;
 }
 
-.instagram-cta {
-  background: linear-gradient(135deg, var(--sage-green) 0%, var(--sage-green-dark) 100%);
-  border-radius: 25px;
-  padding: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(138, 154, 91, 0.3);
-}
-
-.instagram-cta::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.3;
-  animation: patternMove 20s linear infinite;
-}
 
 @keyframes patternMove {
   0% {
@@ -378,52 +353,152 @@
     transform: translate(30px, 30px);
   }
 }
+/* --- Instagram CTA Section (Refined & Official) --- */
+
+.instagram-cta {
+  background-color: white; /* Clean white canvas */
+  border-radius: 30px;
+  padding: 50px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  margin-top: 40px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
 
 .instagram-content {
   flex: 1;
   position: relative;
   z-index: 2;
+  max-width: 550px;
+}
+
+.insta-header {
+  margin-bottom: 20px;
+}
+
+.insta-tag {
+  background: rgba(220, 39, 67, 0.08); /* Very faint red background */
+  color: #cc2366; /* Official Pink */
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
 }
 
 .instagram-content h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 15px;
-  color: white;
+  color: var(--dark-green);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .instagram-content p {
   font-size: 1.1rem;
-  margin-bottom: 25px;
-  opacity: 0.9;
-  max-width: 500px;
+  margin-bottom: 30px;
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
-.instagram-btn {
-  background: white;
-  color: var(--sage-green);
+/* --- Official Gradient Button --- */
+.insta-btn {
+  /* The official Instagram Gradient */
+  background: linear-gradient(
+    45deg, 
+    #f09433 0%, 
+    #e6683c 25%, 
+    #dc2743 50%, 
+    #cc2366 75%, 
+    #bc1888 100%
+  );
+  background-size: 200% auto;
+  color: white;
   font-weight: 600;
   border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 20px rgba(220, 39, 67, 0.25);
 }
 
-.instagram-btn:hover {
-  background: var(--cream);
+.insta-btn:hover {
+  background-position: right center; /* Shifts gradient on hover */
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(220, 39, 67, 0.4);
+  color: white;
 }
 
-.instagram-icon {
+/* --- Visual Section (The Logo) --- */
+.instagram-visual {
   position: relative;
   z-index: 2;
-  width: 100px;
-  height: 100px;
-  color: white;
-  opacity: 0.8;
-  animation: pulse 2s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
 }
 
-.instagram-icon svg {
-  width: 100%;
-  height: 100%;
+.insta-logo-3d {
+  width: 180px;
+  height: 180px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 15px 25px rgba(220, 39, 67, 0.2));
+}
+
+.instagram-cta:hover .insta-logo-3d {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .instagram-cta {
+    padding: 40px;
+  }
+  
+  .insta-logo-3d {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .instagram-cta {
+    flex-direction: column-reverse; /* Put logo on top, text on bottom */
+    text-align: center;
+    padding: 40px 25px;
+    gap: 30px;
+  }
+
+  .instagram-visual {
+    padding-left: 0;
+  }
+
+  .insta-logo-3d {
+    width: 120px; /* Good size for mobile */
+    height: 120px;
+  }
+
+  .instagram-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .instagram-content p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  
+  .insta-btn {
+    width: 100%; /* Full width button on mobile */
+    text-align: center;
+  }
 }
 
 @keyframes pulse {

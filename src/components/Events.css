@@ -4,8 +4,9 @@
 
 .events-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
+  /* This creates a responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
   margin-bottom: 60px;
 }
 
@@ -20,21 +21,14 @@
   flex-direction: column;
 }
 
+/* --- Featured Card: Covers Whole Width --- */
 .event-card.featured {
   border: 2px solid var(--sage-green);
-  grid-column: span 1;
-}
-
-@media (min-width: 992px) {
-  .event-card.featured {
-    grid-column: span 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .event-card.featured .event-image {
-    height: 100%;
-  }
+  /* This makes the featured card span all available columns */
+  grid-column: 1 / -1; 
+  display: grid;
+  /* Desktop: 55% image (marquee), 45% text */
+  grid-template-columns: 55% 45%; 
 }
 
 .event-card:hover {
@@ -42,27 +36,57 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.event-image {
-  height: 220px;
+/* --- Marquee / Image Area Styles --- */
+.event-image-wrapper {
+  height: 300px; /* Taller height for better visibility */
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Hides the scrolling images that go off screen */
+  background-color: #f0f0f0;
 }
 
-.event-image img {
+/* This is the container moving inside the wrapper */
+.marquee-track {
+  display: flex;
+  height: 100%;
+  width: max-content; /* Ensure width fits all images */
+  /* The animation definition */
+  animation: scroll 25s linear infinite; 
+}
+
+/* Pause animation on hover so user can look at photo */
+.event-image-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  height: 100%;
+  width: 400px; /* Fixed width for each image slice */
+  flex-shrink: 0; /* Prevents squishing */
+}
+
+.marquee-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  object-fit: cover; /* Ensures images fill the area without distortion */
+  display: block;
 }
 
-.event-card:hover .event-image img {
-  transform: scale(1.05);
+/* The Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves the track to the left by 50% (since we doubled the images) */
+    transform: translateX(-50%); 
+  }
 }
 
 .featured-badge {
   position: absolute;
   top: 20px;
   right: 20px;
+  z-index: 10;
   background-color: var(--sage-green);
   color: white;
   padding: 8px 16px;
@@ -70,51 +94,59 @@
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* --- Content Styling --- */
 .event-content {
-  padding: 25px;
+  padding: 30px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .event-date {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--sage-green);
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .event-title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-bottom: 15px;
   color: var(--dark-green);
+  line-height: 1.2;
 }
 
 .event-description {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-light);
-  margin-bottom: 25px;
-  flex-grow: 1;
+  margin-bottom: 30px;
 }
 
 .event-actions {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .btn-event {
-  padding: 10px 24px;
+  padding: 12px 30px;
   border-radius: 50px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
+  text-decoration: none; /* Required for <a> tags */
+  display: inline-block;
   transition: all 0.3s ease;
   border: 2px solid;
+  text-align: center;
 }
 
 .btn-book {
@@ -126,6 +158,7 @@
 .btn-book:hover {
   background-color: var(--sage-green-dark);
   border-color: var(--sage-green-dark);
+  transform: translateY(-2px);
 }
 
 .btn-details {
@@ -136,13 +169,15 @@
 
 .btn-details:hover {
   background-color: rgba(138, 154, 91, 0.1);
+  transform: translateY(-2px);
 }
 
+/* --- Footer Info Box --- */
 .events-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .info-box {
@@ -164,14 +199,45 @@
   line-height: 1.7;
 }
 
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+  /* On tablets, stack the featured card vertically */
+  .event-card.featured {
+    grid-template-columns: 1fr; 
+    /* Image on top, text on bottom */
+  }
+  
+  .event-image-wrapper {
+    height: 250px; /* Slightly smaller height */
+  }
+}
+
 @media (max-width: 768px) {
+  /* Mobile phones */
   .events-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column for all cards */
+    gap: 25px;
   }
   
   .event-card.featured {
-    grid-column: span 1;
-    display: flex;
-    flex-direction: column;
+    grid-column: span 1; /* Reset span */
+  }
+
+  .event-title {
+    font-size: 1.4rem;
+  }
+  
+  .event-content {
+    padding: 20px;
+  }
+  
+  /* Make marquee items smaller on mobile so you see more context */
+  .marquee-item {
+    width: 300px;
+  }
+  
+  .btn-event {
+    width: 100%; /* Full width buttons on mobile */
+    margin-bottom: 5px;
   }
 }

@@ -50,16 +50,9 @@ const Footer = () => {
               <h3 className="footer-title">Order Online</h3>
               <p className="footer-text">Get your favorite Suto treats delivered to your doorstep</p>
               <div className="delivery-buttons">
+               
                 <a 
-                  href="https://www.zomato.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="delivery-btn zomato"
-                >
-                  Order on Zomato
-                </a>
-                <a 
-                  href="https://www.swiggy.com" 
+                  href="https://www.swiggy.com/city/bhubaneswar/suto-cafe-infocity-infocity-patia-rest1270796" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="delivery-btn swiggy"
@@ -78,9 +71,8 @@ const Footer = () => {
             © {currentYear} Suto Cafe. All rights reserved.
           </div>
           <div className="social-links">
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="https://www.instagram.com/sutocafe_infocity/" aria-label="Instagram">Instagram</a>
+            <a href="https://www.threads.com/@sutocafe_infocity?xmt=AQF0TOvctAVpZ93U5D7NhVSzktLR7brm3Anrlykiil5XHiw" aria-label="Threds">Threds</a>
           </div>
         </div>
       </div>
