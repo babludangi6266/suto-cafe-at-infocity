@@ -8,7 +8,7 @@ const Menu = () => {
   // Define the path to your full menu image here
   const fullMenuImage = '/assets/menu/menu.jpeg' 
 
-  const fullMenuPdf = '/assets/suto_cafe_menu.pdf'
+  const fullMenuPdf = '/assets/suto-cafe-menu.pdf'
   // Define your Swiggy URL
   const swiggyLink = 'https://www.swiggy.com/city/bhubaneswar/suto-cafe-infocity-infocity-patia-rest1270796' 
 
