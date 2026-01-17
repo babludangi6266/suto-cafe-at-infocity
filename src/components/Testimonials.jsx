@@ -4,41 +4,45 @@ import './Testimonials.css'
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0)
 
+  // Placeholder for your actual Google Maps Review link
+  // Replace this URL with the actual 'Share Review' link from your Google Business Profile
+  const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/LGj5v9jy47dsjDdv5";
+
   const testimonials = [
     {
-      name: 'Priya Sharma',
+      name: 'Satyajit Mohanty',
       role: 'Regular Visitor',
       quote: 'The matcha latte at Suto Cafe is the best in Bhubaneswar! The ambiance is perfect for both work and relaxation.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/32.jpg'
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces'
     },
     {
-      name: 'Rahul Mehta',
+      name: 'Priyadarshini Jena',
       role: 'Food Blogger',
       quote: 'As a food blogger, I\'ve visited countless cafes. Suto stands out for its consistency, quality, and the warm staff.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/54.jpg'
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces'
     },
     {
-      name: 'Ananya Patil',
+      name: 'Abinash Das',
       role: 'Student',
       quote: 'My go-to study spot! Great coffee, free WiFi, and the standup comedy nights are an amazing bonus.',
       rating: 4,
-      image: 'https://randomuser.me/api/portraits/women/67.jpg'
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=faces'
     },
     {
-      name: 'Vikram Singh',
+      name: 'Lopamudra Sahoo',
       role: 'Office Worker',
       quote: 'The platters are generous and delicious. Perfect for a quick lunch break. The "Jee Bhar Ke" vibe is real!',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/men/36.jpg'
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=faces'
     },
     {
-      name: 'Neha Reddy',
+      name: 'Soumya Ranjan Patra',
       role: 'Matcha Enthusiast',
       quote: 'Finally, a cafe that understands matcha! Their preparation is authentic, and the presentation is always Instagram-worthy.',
       rating: 5,
-      image: 'https://randomuser.me/api/portraits/women/44.jpg'
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces'
     }
   ]
 
@@ -123,6 +127,23 @@ const Testimonials = () => {
             />
           ))}
         </div>
+
+        {/* New Aesthetic Review Section */}
+        <div className="review-cta-container">
+          <div className="review-cta-content">
+            <h3>Loved your experience at Suto?</h3>
+            <p>Your words help us brew better stories. Share your thoughts with us on Google.</p>
+            <a 
+              href={GOOGLE_MAPS_LINK} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="google-review-btn"
+            >
+              <span className="google-icon">G</span> Write a Review
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
   )

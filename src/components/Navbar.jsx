@@ -28,7 +28,7 @@ const Navbar = ({ isMobile }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo" onClick={() => scrollToSection('home')}>
-          <span className="logo-text">Suto Cafe</span>
+          <span className="logo-text">Suto Cafe - Infocity</span>
         </div>
         
         {isMobile ? (

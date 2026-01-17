@@ -1,6 +1,8 @@
 .testimonials-section {
   background-color: var(--white);
   overflow: hidden;
+  padding: 60px 0;
+  position: relative;
 }
 
 .testimonials-container {
@@ -15,11 +17,12 @@
 .testimonials-track {
   width: 100%;
   overflow: hidden;
+  /* Added a mask to soften edges if needed, optional */
 }
 
 .testimonials-slide {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother easing */
   width: 100%;
 }
 
@@ -30,6 +33,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-card.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .quote-icon {
@@ -85,6 +96,7 @@
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--sage-green-light);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .author-image img {
@@ -101,6 +113,7 @@
   font-size: 1.2rem;
   color: var(--dark-green);
   margin-bottom: 5px;
+  font-weight: 600;
 }
 
 .author-role {
@@ -131,19 +144,22 @@
   transition: all 0.3s ease;
   flex-shrink: 0;
   margin: 0 20px;
+  z-index: 10;
 }
 
 .testimonial-nav:hover {
   background-color: var(--sage-green);
   color: white;
   border-color: var(--sage-green);
+  transform: scale(1.1);
 }
 
 .testimonial-dots {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 50px; /* Added margin to separate from review card */
 }
 
 .dot {
@@ -167,24 +183,111 @@
   opacity: 0.8;
 }
 
+/* --- New Review CTA Section --- */
+.review-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f9fbf9; /* Very light sage tint */
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(138, 154, 91, 0.2); /* Soft border */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.review-cta-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.review-cta-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--dark-green);
+  margin-bottom: 10px;
+}
+
+.review-cta-content p {
+  color: var(--text-light);
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.google-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--sage-green);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(138, 154, 91, 0.3);
+}
+
+.google-review-btn:hover {
+  background-color: var(--dark-green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(138, 154, 91, 0.4);
+}
+
+.google-icon {
+  font-weight: 800;
+  font-family: sans-serif;
+  background: white;
+  color: var(--sage-green);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* --- Mobile Responsive --- */
 @media (max-width: 768px) {
   .testimonial-card {
-    padding: 30px 20px;
+    padding: 20px 10px;
   }
   
   .testimonial-quote {
     font-size: 1.1rem;
+    margin-bottom: 30px;
   }
   
   .testimonial-nav {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
-    margin: 0 10px;
+    margin: 0 5px; /* Tighter margins on mobile */
+    position: absolute; /* Float buttons on top of card for mobile to save space */
+    top: 50%;
+    transform: translateY(-50%);
   }
   
+  .testimonial-nav.prev {
+    left: 0;
+  }
+
+  .testimonial-nav.next {
+    right: 0;
+  }
+
   .author-image {
     width: 60px;
     height: 60px;
+  }
+  
+  .review-cta-container {
+    padding: 30px 20px;
+    margin: 0 15px; /* Margin from screen edges */
+  }
+  
+  .review-cta-content h3 {
+    font-size: 1.5rem;
   }
 }

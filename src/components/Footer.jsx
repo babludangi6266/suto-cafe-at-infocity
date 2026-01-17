@@ -37,11 +37,11 @@ const Footer = () => {
                 </div>
                 <div className="info-item">
                   <span className="info-icon">📞</span>
-                  <p>+91 98765 43210</p>
+                  <p>+91 96686 65219</p>
                 </div>
                 <div className="info-item">
-                  <span className="info-icon">✉️</span>
-                  <p>hello@sutocafe.com</p>
+                  <span className="info-icon">⌚</span>
+                  <p>10:30-22:00</p>
                 </div>
               </div>
             </div>
